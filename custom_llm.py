@@ -39,7 +39,6 @@ class DistilBertLLM(LLM):
             response.raise_for_status()
             result = response.json()
             
-            # Handle different response formats
             if isinstance(result, list):
                 return result[0].get('answer', 'No answer found')
             elif isinstance(result, dict):
